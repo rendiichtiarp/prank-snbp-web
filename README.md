@@ -3,14 +3,14 @@
 Sebuah website interaktif yang mensimulasikan pengumuman hasil SNBP (Seleksi Nasional Berbasis Prestasi) dengan cara yang menghibur. Website ini dirancang khusus untuk tujuan hiburan dan tidak memiliki afiliasi resmi dengan proses SNBP yang sebenarnya.
 
 ## 🖼️ Tampilan Website
+*Halaman Login*<br>
 ![Halaman Login](https://raw.githubusercontent.com/rendiichtiarp/prank-snbp-web/refs/heads/main/public/halaman-login.png)
-*Halaman Login*
 
+*Tampilan Hasil Diterima*<br>
 ![Hasil Diterima](https://raw.githubusercontent.com/rendiichtiarp/prank-snbp-web/refs/heads/main/public/halaman-hasil-accept.png)
-*Tampilan Hasil Diterima*
 
+*Tampilan Hasil Tidak Diterima*<br>
 ![Hasil Tidak Diterima](https://raw.githubusercontent.com/rendiichtiarp/prank-snbp-web/refs/heads/main/public/halaman-hasil-reject.png)
-*Tampilan Hasil Tidak Diterima*
 
 ## ✨ Fitur Utama
 - 🚀 Dibangun menggunakan Next.js versi 15.2.1
