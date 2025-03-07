@@ -38,7 +38,7 @@ const TurnstileVerification = () => {
         <div className="flex flex-col items-center gap-4">
           <Turnstile
             ref={turnstileRef}
-            sitekey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
+            sitekey={process.env.TURNSTILE_SITE_KEY}
             onVerify={handleVerification}
             onError={() => {
               setError('Terjadi kesalahan saat verifikasi');
