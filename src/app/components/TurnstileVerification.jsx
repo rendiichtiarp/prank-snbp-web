@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { logo } from '../lib/utils/image';
@@ -11,9 +11,20 @@ const TurnstileVerification = () => {
   const turnstileRef = useRef();
   const [error, setError] = useState('');
 
+  useEffect(() => {
+    // Langsung redirect ke login jika dalam mode development
+    if (process.env.NODE_ENV === 'development') {
+      const devVerificationData = {
+        token: 'dev-token',
+        timestamp: new Date().getTime()
+      };
+      sessionStorage.setItem('turnstileData', JSON.stringify(devVerificationData));
+      router.push('/login');
+    }
+  }, [router]);
+
   const handleVerification = (token) => {
     if (token) {
-      // Simpan token dan timestamp
       const verificationData = {
         token: token,
         timestamp: new Date().getTime()
@@ -23,10 +34,14 @@ const TurnstileVerification = () => {
     }
   };
 
+  // Jika dalam mode development, tidak perlu render apapun
+  if (process.env.NODE_ENV === 'development') {
+    return null;
+  }
+
   return (
     <div className="bg-background flex justify-center items-center min-h-screen py-8">
       <div className="bg-primary p-6 sm:p-8 md:p-9 w-full max-w-[500px] rounded-md mx-4 text-center">
-        
         <h1 className="text-[24px] font-extrabold sm:text-[1.8rem] mb-4">
           Anda bukan robot kan?
         </h1>
@@ -38,7 +53,7 @@ const TurnstileVerification = () => {
         <div className="flex flex-col items-center gap-4">
           <Turnstile
             ref={turnstileRef}
-            sitekey={process.env.TURNSTILE_SITE_KEY}
+            sitekey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
             onVerify={handleVerification}
             onError={() => {
               setError('Terjadi kesalahan saat verifikasi');
