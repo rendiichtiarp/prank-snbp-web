@@ -1,56 +1,35 @@
 'use client';
 
-import React, { useState, useRef } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { logo } from '../lib/utils/image';
-import Turnstile from 'react-turnstile';
+import { logo } from './lib/utils/image';
 
-const TurnstileVerification = () => {
+export default function NotFound() {
   const router = useRouter();
-  const turnstileRef = useRef();
-  const [error, setError] = useState('');
-
-  const handleVerification = (token) => {
-    if (token) {
-      // Simpan token dan timestamp
-      const verificationData = {
-        token: token,
-        timestamp: new Date().getTime()
-      };
-      sessionStorage.setItem('turnstileData', JSON.stringify(verificationData));
-      router.push('/login');
-    }
-  };
 
   return (
     <div className="bg-background flex justify-center items-center min-h-screen py-8">
       <div className="bg-primary p-6 sm:p-8 md:p-9 w-full max-w-[500px] rounded-md mx-4 text-center">
+        <div className="flex justify-center mb-6">
+          <Image className="h-[40px] sm:h-[70px] w-auto" src={logo} alt="Logo" />
+        </div>
         
         <h1 className="text-[24px] font-extrabold sm:text-[1.8rem] mb-4">
-          Anda bukan robot kan?
+          404 - Halaman Tidak Ditemukan
         </h1>
         
         <p className="text-font mb-8">
-          Buktikan bahwa Anda bukan robot dengan verifikasi dibawah ini.
+          Maaf, halaman yang Anda cari tidak dapat ditemukan. Silakan kembali ke halaman utama.
         </p>
 
-        <div className="flex flex-col items-center gap-4">
-          <Turnstile
-            ref={turnstileRef}
-            sitekey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
-            onVerify={handleVerification}
-            onError={() => {
-              setError('Terjadi kesalahan saat verifikasi');
-            }}
-            onExpire={() => {
-              setError('Verifikasi telah kedaluwarsa, silakan coba lagi');
-            }}
-            className="mb-2"
-          />
-          {error && (
-            <span className="text-red-500 text-sm">{error}</span>
-          )}
+        <div className="flex justify-center">
+          <button 
+            onClick={() => router.push('/')}
+            className="bg-accepted rounded-full font-extrabold text-sm py-3 px-6 tracking-wide shadow-md hover:opacity-90 transition-opacity"
+          >
+            KEMBALI KE HALAMAN UTAMA
+          </button>
         </div>
 
         <div className="mt-6 text-center">
@@ -66,6 +45,4 @@ const TurnstileVerification = () => {
       </div>
     </div>
   );
-};
-
-export default TurnstileVerification; 
+} 

@@ -11,11 +11,6 @@ const Login = () => {
   const setFormData = useFormStore((state) => state.setFormData);
   
   useEffect(() => {
-    // Skip verifikasi jika dalam mode development
-    if (process.env.NODE_ENV === 'development') {
-      return;
-    }
-
     // Periksa token Turnstile dan waktu verifikasinya
     const turnstileData = sessionStorage.getItem('turnstileData');
     
