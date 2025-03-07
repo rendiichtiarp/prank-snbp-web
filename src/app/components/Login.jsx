@@ -140,6 +140,11 @@ const Login = () => {
       if (value && !/^\d+$/.test(value)) return;
       // Maksimal 31
       if (parseInt(value) > 31) return;
+      
+      // Auto focus ke input bulan jika sudah 2 digit
+      if (value.length === 2) {
+        document.getElementById('month').focus();
+      }
     }
     
     if (name === 'month') {
@@ -149,6 +154,11 @@ const Login = () => {
       if (value && !/^\d+$/.test(value)) return;
       // Maksimal 12
       if (parseInt(value) > 12) return;
+      
+      // Auto focus ke input tahun jika sudah 2 digit
+      if (value.length === 2) {
+        document.getElementById('year').focus();
+      }
     }
     
     if (name === 'year') {
@@ -158,6 +168,11 @@ const Login = () => {
       if (value && !/^\d+$/.test(value)) return;
       // Tahun antara 1990-2024
       if (value.length === 4 && (parseInt(value) < 1990 || parseInt(value) > 2024)) return;
+      
+      // Auto focus ke input berikutnya (kabupaten) jika sudah 4 digit
+      if (value.length === 4) {
+        document.getElementById('kabupaten').focus();
+      }
     }
 
     setFormDataState(prev => ({

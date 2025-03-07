@@ -95,7 +95,7 @@ const Accepted = () => {
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                https://um.undip.ac.id/
+                                https://prank-snbp.rendiichtiar.xyz/
                             </a>
                         </div>
                     </div>
