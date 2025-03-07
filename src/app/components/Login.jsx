@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { logo } from '../lib/utils/image';
@@ -9,6 +9,34 @@ import useFormStore from '../store/formStore';
 const Login = () => {
   const router = useRouter();
   const setFormData = useFormStore((state) => state.setFormData);
+  
+  useEffect(() => {
+    // Periksa token Turnstile dan waktu verifikasinya
+    const turnstileData = sessionStorage.getItem('turnstileData');
+    
+    if (!turnstileData) {
+      router.push('/');
+      return;
+    }
+
+    try {
+      const { timestamp, token } = JSON.parse(turnstileData);
+      const currentTime = new Date().getTime();
+      const oneHour = 60 * 60 * 1000; // 1 jam dalam milidetik
+      
+      // Jika waktu verifikasi sudah lebih dari 1 jam
+      if (currentTime - timestamp > oneHour) {
+        sessionStorage.removeItem('turnstileData');
+        router.push('/');
+        return;
+      }
+    } catch (error) {
+      sessionStorage.removeItem('turnstileData');
+      router.push('/');
+      return;
+    }
+  }, [router]);
+
   const [formData, setFormDataState] = useState({
     nisn: '',
     noRegist: '',
@@ -466,7 +494,7 @@ const Login = () => {
           </a>
           <div className="mt-2">
             <a href="https://saweria.co/rendiichtiar" target="_blank" className="text-xs text-font flex items-center justify-center gap-1">
-              Support me on 🎁<span className="font-bold underline">Saweria</span>
+              Support me on 🎁<span className="underline">Saweria</span>
             </a>
           </div>
         </div>

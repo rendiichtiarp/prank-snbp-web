@@ -1,10 +1,5 @@
-import Image from "next/image";
-import Login from "./components/Login";
+import TurnstileVerification from './components/TurnstileVerification';
 
 export default function Home() {
-  return (
-    <>
-    <Login/>
-    </>
-  );
+  return <TurnstileVerification />;
 }
