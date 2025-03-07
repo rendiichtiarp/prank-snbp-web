@@ -459,6 +459,12 @@ const Login = () => {
             LIHAT HASIL SELEKSI
           </button>
         </div>
+
+        <div className="mt-6 text-center">
+          <a href="https://instagram.com/rendiichtiar" target="_blank" className="text-xs text-font hover:underline">
+            Created by @rendiichtiar with ❤️
+          </a>
+        </div>
       </form>
     </div>
   );

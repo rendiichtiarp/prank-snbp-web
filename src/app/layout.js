@@ -1,5 +1,6 @@
 import "./globals.css";
 import { Lato } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 
 const lato = Lato({
   subsets: ["latin"],
@@ -14,7 +15,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={lato.className}>{children}</body>
+      <body className={lato.className}>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
