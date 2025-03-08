@@ -25,10 +25,10 @@ const Rejected = () => {
                 <div className='flex flex-col-reverse md:flex-row justify-between md:items-center items-start p-8 bg-red-600'>
                     <div>
                         <h1 className='text-2xl md:text-3xl font-bold tracking-wide text-white mb-4 md:mb-0'>
-                            ANDA DINYATAKAN TIDAK LULUS SELEKSI SNBP 2024
+                            ANDA DINYATAKAN TIDAK LULUS SELEKSI SNBP 2025
                         </h1>
                         <h1 className='text-xs md:text-base font-medium tracking-wide text-white mb-4 md:mb-0'>
-                            MASIH ADA KESEMPATAN MENDAFTAR DAN MENGIKUTI SNBP 2024 ATAU SELEKSI MANDIRI PTN
+                            MASIH ADA KESEMPATAN MENDAFTAR DAN MENGIKUTI SNBP 2025 ATAU SELEKSI MANDIRI PTN
                         </h1>
                     </div>
                     <Image
