@@ -1,10 +1,11 @@
 import React from 'react'
 import Rejected from './components/Rejected'
+import styles from './page.module.css'
 
 export default function page() {
   return (
-    <div>
-        <Rejected/>
+    <div className={styles.container}>
+      <Rejected/>
     </div>
   )
 }

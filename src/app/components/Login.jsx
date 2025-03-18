@@ -221,7 +221,7 @@ const Login = () => {
 
   return (
     <div className="bg-background flex justify-center items-center min-h-screen py-8">
-      <form onSubmit={handleSubmit} className="bg-primary p-6 sm:p-8 md:p-9 w-full max-w-[700px] rounded-md mx-4">
+      <form onSubmit={handleSubmit} className="bg-primary/30 backdrop-blur-md p-6 sm:p-8 md:p-9 w-full max-w-[700px] rounded-md mx-4">
         <div className="flex">
           <Image className="h-[40px] sm:h-[70px] w-auto mb-5" src={logo} alt="Logo" />
         </div>
@@ -236,7 +236,7 @@ const Login = () => {
               NISN
             </label>
             <input
-              className={`bg-input text-[1rem] py-3 px-4 rounded-md font-semibold placeholder-neutral-500 ${
+              className={`bg-input/30 backdrop-blur-sm text-[1rem] py-3 px-4 rounded-md font-semibold placeholder-neutral-500 ${
                 errors.nisn ? 'border-2 border-red-500' : ''
               }`}
               type="text"
@@ -257,7 +257,7 @@ const Login = () => {
               Nomor Peserta
             </label>
             <input
-              className={`bg-input text-[1rem] py-3 px-4 rounded-md font-semibold placeholder-neutral-500 ${
+              className={`bg-input/30 backdrop-blur-sm text-[1rem] py-3 px-4 rounded-md font-semibold placeholder-neutral-500 ${
                 errors.noRegist ? 'border-2 border-red-500' : ''
               }`}
               type="text"
@@ -278,7 +278,7 @@ const Login = () => {
               Nama Lengkap
             </label>
             <input
-              className={`bg-input text-[1rem] py-3 px-4 rounded-md font-semibold placeholder-neutral-500 ${
+              className={`bg-input/30 backdrop-blur-sm text-[1rem] py-3 px-4 rounded-md font-semibold placeholder-neutral-500 ${
                 errors.nama ? 'border-2 border-red-500' : ''
               }`}
               type="text"
@@ -299,7 +299,7 @@ const Login = () => {
               Program Studi
             </label>
             <input
-              className={`bg-input text-[1rem] py-3 px-4 rounded-md font-semibold placeholder-neutral-500 ${
+              className={`bg-input/30 backdrop-blur-sm text-[1rem] py-3 px-4 rounded-md font-semibold placeholder-neutral-500 ${
                 errors.jurusan ? 'border-2 border-red-500' : ''
               }`}
               type="text"
@@ -320,7 +320,7 @@ const Login = () => {
               Universitas
             </label>
             <input
-              className={`bg-input text-[1rem] py-3 px-4 rounded-md font-semibold placeholder-neutral-500 ${
+              className={`bg-input/30 backdrop-blur-sm text-[1rem] py-3 px-4 rounded-md font-semibold placeholder-neutral-500 ${
                 errors.universitas ? 'border-2 border-red-500' : ''
               }`}
               type="text"
@@ -342,7 +342,7 @@ const Login = () => {
             </label>
             <div className="flex gap-2 items-center">
               <input
-                className={`bg-input w-[60px] sm:w-[80px] text-[1rem] py-3 px-2 rounded-md font-semibold placeholder-neutral-500 text-center ${
+                className={`bg-input/30 backdrop-blur-sm w-[60px] sm:w-[80px] text-[1rem] py-3 px-2 rounded-md font-semibold placeholder-neutral-500 text-center ${
                   errors.date ? 'border-2 border-red-500' : ''
                 }`}
                 type="text"
@@ -355,7 +355,7 @@ const Login = () => {
               />
               <span className="text-[20px] font-bold text-font">/</span>
               <input
-                className={`bg-input w-[60px] sm:w-[80px] text-[1rem] py-3 px-2 rounded-md font-semibold placeholder-neutral-500 text-center ${
+                className={`bg-input/30 backdrop-blur-sm w-[60px] sm:w-[80px] text-[1rem] py-3 px-2 rounded-md font-semibold placeholder-neutral-500 text-center ${
                   errors.month ? 'border-2 border-red-500' : ''
                 }`}
                 type="text"
@@ -368,7 +368,7 @@ const Login = () => {
               />
               <span className="text-[20px] font-bold text-font">/</span>
               <input
-                className={`bg-input w-[60px] sm:w-[80px] text-[1rem] py-3 px-2 rounded-md font-semibold placeholder-neutral-500 text-center ${
+                className={`bg-input/30 backdrop-blur-sm w-[60px] sm:w-[80px] text-[1rem] py-3 px-2 rounded-md font-semibold placeholder-neutral-500 text-center ${
                   errors.year ? 'border-2 border-red-500' : ''
                 }`}
                 type="text"
@@ -396,7 +396,7 @@ const Login = () => {
               Kabupaten/Kota
             </label>
             <input
-              className={`bg-input text-[1rem] py-3 px-4 rounded-md font-semibold placeholder-neutral-500 ${
+              className={`bg-input/30 backdrop-blur-sm text-[1rem] py-3 px-4 rounded-md font-semibold placeholder-neutral-500 ${
                 errors.kabupaten ? 'border-2 border-red-500' : ''
               }`}
               type="text"
@@ -416,7 +416,7 @@ const Login = () => {
               Asal Sekolah
             </label>
             <input
-              className={`bg-input text-[1rem] py-3 px-4 rounded-md font-semibold placeholder-neutral-500 ${
+              className={`bg-input/30 backdrop-blur-sm text-[1rem] py-3 px-4 rounded-md font-semibold placeholder-neutral-500 ${
                 errors.sekolah ? 'border-2 border-red-500' : ''
               }`}
               type="text"
@@ -436,7 +436,7 @@ const Login = () => {
               Provinsi
             </label>
             <input
-              className={`bg-input text-[1rem] py-3 px-4 rounded-md font-semibold placeholder-neutral-500 ${
+              className={`bg-input/30 backdrop-blur-sm text-[1rem] py-3 px-4 rounded-md font-semibold placeholder-neutral-500 ${
                 errors.provinsi ? 'border-2 border-red-500' : ''
               }`}
               type="text"
